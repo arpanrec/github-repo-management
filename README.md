@@ -1,5 +1,7 @@
 # GitHub Repository Management
 
+[![Terraform](https://github.com/arpanrec/github-repo-management/actions/workflows/terraform.yml/badge.svg)](https://github.com/arpanrec/github-repo-management/actions/workflows/terraform.yml)
+
 [Terraform](https://www.terraform.io) Project for managing all GitHub repositories.
 
 ## Workflow and Configuration
