@@ -2,7 +2,7 @@ resource "github_repository" "github_repo_management" {
   name               = "github-repo-management"
   license_template   = var.license_template
   description        = "Manage the current github"
-  visibility         = "private"
+  visibility         = "public"
   gitignore_template = "Terraform"
   auto_init          = true
 }
