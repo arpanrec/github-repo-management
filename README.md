@@ -36,33 +36,37 @@ terraform {
 
 Make sure the [Terraform Binary](https://www.terraform.io/downloads) is in your PATH.
 
-[Terraform Login](https://www.terraform.io/cli/commands/login) to [Terraform cloud](https://app.terraform.io/app/arpanrec)
+### [Terraform Login](https://www.terraform.io/cli/commands/login) to [Terraform cloud](https://app.terraform.io/app/arpanrec)
 
 ```shell
 terraform login
 ```
+or
+populate `$HOME/.terraform.d/credentials.tfrc.json`
 
-Initialize the Terraform workspace with `terraform init`.
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "xxxx.xxxx.xxxxxxxx"
+    }
+  }
+}
+```
+
+### Initialize the Terraform workspace with `terraform init`.
 
 ```shell
 terraform init
 ```
 
-Make sure to populate the file `.secret.all.json` with sensitive data needed.
-
-```json
-{
-  "GITHUB_TOKEN": ""
-}
-```
-
-Make changes and plan the changes with `terraform plan`.
+### Make changes and plan the changes with `terraform plan`.
 
 ```shell
-terraform plan -input=false -var-file=".secret.all.json" -out="./tfplan"
+terraform plan -input=false -out="./tfplan"
 ```
 
-Apply the changes with `terraform apply`.
+### Apply the changes with `terraform apply`.
 
 ```shell
 terraform apply "./tfplan"
