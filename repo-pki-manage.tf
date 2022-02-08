@@ -7,7 +7,7 @@ resource "github_repository" "pki_manage" {
   auto_init          = true
 }
 
-resource "github_branch_default" "ca_manage" {
+resource "github_branch_default" "pki_manage" {
   repository = github_repository.pki_manage.name
   branch     = var.repository_default_branch_01292022_main
 }
