@@ -1,5 +1,5 @@
 resource "github_repository" "pki_manage" {
-  name               = "pki-manage"
+  name               = "pki-init"
   license_template   = var.license_template
   description        = "Manage PKI"
   visibility         = "public"
