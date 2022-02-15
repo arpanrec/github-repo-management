@@ -9,5 +9,5 @@ resource "github_repository" "ansible_playbook_userapps" {
 
 resource "github_branch_default" "ansible_playbook_userapps" {
   repository = github_repository.ansible_playbook_userapps.name
-  branch     = var.repository_default_branch_01062022_main
+  branch     = var.repository_default_branch_01292022_main
 }
