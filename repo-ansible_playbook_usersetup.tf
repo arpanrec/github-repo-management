@@ -1,5 +1,5 @@
 resource "github_repository" "ansible_playbook_userapps" {
-  name               = "ansible-playbook-userapps"
+  name               = "ansible-playbook-usersetup"
   description        = "Install Apps in user dir"
   visibility         = "public"
   license_template   = var.license_template
