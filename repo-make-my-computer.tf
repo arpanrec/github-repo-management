@@ -1,5 +1,5 @@
 resource "github_repository" "make_my_computer" {
-  name = "make-my-computer"
+  name               = "make-my-computer"
   license_template   = var.license_template
   description        = "automated script for os installation"
   visibility         = "public"
