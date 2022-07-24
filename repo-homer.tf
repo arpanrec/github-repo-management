@@ -1,5 +1,5 @@
 resource "github_repository" "homer" {
-  name = "homer"
+  name               = "homer"
   description        = "Home Page"
   visibility         = "public"
   license_template   = var.license_template
