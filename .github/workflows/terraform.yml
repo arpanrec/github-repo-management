@@ -29,7 +29,7 @@ jobs:
     #   with:
     #     cli_config_credentials_token: ${{ secrets.TF_PROD_TOKEN }}
 
-     - run: echo GITHUB_TOKEN = \"${{ secrets.GITHUB_TOKEN }}\" > secrets.auto.tfvars
+    - run: echo GITHUB_TOKEN = \"${{ secrets.GITHUB_TOKEN }}\" > secrets.auto.tfvars
 
     - run: ls -al
     - run: cat secrets.auto.tfvars
