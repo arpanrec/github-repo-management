@@ -4,6 +4,11 @@
 
 [Terraform](https://www.terraform.io) Project for managing all GitHub repositories.
 
+Prerequisite:
+
+* [terraform-cloud-management](https://github.com/arpanrec/terraform-cloud-management)
+* GitHub API Token [Only for local run, Not Needed for CICD Github Actions]
+
 ## Workflow and Configuration
 
 ### @ Backend
@@ -24,13 +29,8 @@ terraform {
 ### @ GitHub
 
 * Actions: Trigger Push on Main Branch, [Terraform Actions](.github/workflows/terraform.yml)
-* Access token to app.terraform.io is stored in GitHub Actions secrets `TF_API_TOKEN`. This allows GitHub Actions to
+* Access token to app.terraform.io is stored in GitHub Actions secrets `TF_PROD_TOKEN`. This allows GitHub Actions to
   communicate with [Terraform Cloud](https://app.terraform.io/app/arpanrec/workspaces/github-repo-management).
-
-### @ Terraform Cloud
-
-* GitHub Access Token is added in Terraform Cloud Workspace variables `Terraform variable` with key `GITHUB_TOKEN` and
-  marked as `Sensitive`
 
 ## Local Run
 
@@ -55,6 +55,16 @@ populate `$HOME/.terraform.d/credentials.tfrc.json`
 }
 ```
 
+### Add github token
+
+Create a file `./secrets.auto.tfvars`
+
+```hcl
+GITHUB_TOKEN = "ghp_xxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+
+** This file will be created automatically in CICD Github Actions.
+
 ### Initialize the Terraform workspace with `terraform init`
 
 ```shell
@@ -75,4 +85,4 @@ terraform apply "./tfplan"
 
 ## TODO
 
-GitHub Actions secrets `TF_API_TOKEN` for [github-repo-management](https://github.com/arpanrec/github-repo-management) is added manually. This should be pulled from vault.
+GitHub Actions secrets `TF_PROD_TOKEN` for [github-repo-management](https://github.com/arpanrec/github-repo-management) is added manually. This should be pulled from vault.

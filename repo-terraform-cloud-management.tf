@@ -12,7 +12,7 @@ resource "github_branch_default" "terraform_cloud_management" {
   branch     = var.repository_default_branch_01292022_main
 }
 
-resource "github_repository_environment" "terraform_cloud_management_production" {
-  environment = "production"
-  repository  = github_repository.terraform_cloud_management.name
-}
+# resource "github_repository_environment" "terraform_cloud_management_production" {
+#   environment = "production"
+#   repository  = github_repository.terraform_cloud_management.name
+# }
